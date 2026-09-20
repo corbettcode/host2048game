@@ -1,10 +1,31 @@
-This is a [Kobweb](https://github.com/varabyte/kobweb) project bootstrapped with the `app/empty` template.
+# 2048
 
-This template is useful if you already know what you're doing and just want a clean slate. By default, it
-just creates a blank home page (which prints to the console so you can confirm it's working)
+A [Kobweb](https://github.com/varabyte/kobweb) implementation of
+[2048](https://en.wikipedia.org/wiki/2048_(video_game)): slide the tiles with the arrow keys (or WASD, or a swipe),
+merge matching numbers, and try to build a 2048 tile.
 
-If you are still learning, consider instantiating the `app` template (or one of the examples) to see actual,
-working projects.
+The rules follow the ones described on Wikipedia:
+
+* A 4x4 grid that starts with two tiles.
+* Every turn spawns one new tile in a random empty cell: a 2 90% of the time, a 4 otherwise.
+* Tiles slide as far as they can; equal tiles that collide merge and add their combined value to the score.
+* A tile formed by a merge cannot merge again during the same move.
+* Reaching 2048 wins, but you can keep playing for a higher score.
+* The game ends when there are no empty cells and no equal neighbours left.
+
+## Layout
+
+| Path | What it holds |
+| --- | --- |
+| `site/src/jsMain/.../game/Game2048.kt` | The rules, as pure functions over an immutable `GameState`. |
+| `site/src/jsMain/.../game/GameController.kt` | Live game state plus the best score, persisted in local storage. |
+| `site/src/jsMain/.../components/widgets/` | The board, tiles, score boxes and buttons. |
+| `site/src/jsMain/.../pages/Index.kt` | Page layout, keyboard and swipe input, responsive board sizing. |
+| `site/src/jsTest/.../game/Game2048Test.kt` | Rule tests, run with `./gradlew :site:jsTest`. |
+
+Tiles keep a stable id as they move, so the UI can animate them sliding between cells. When two tiles merge, the
+merged tile inherits the id of the tile that slid into place, which is what makes a merge look like a single
+uninterrupted slide.
 
 ## Getting Started
 

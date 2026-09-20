@@ -13,7 +13,7 @@ version = "1.0-SNAPSHOT"
 kobweb {
     app {
         index {
-            description.set("Powered by Kobweb")
+            description.set("2048, the sliding tile puzzle, built with Kobweb")
         }
     }
 }
@@ -29,7 +29,10 @@ kotlin {
             implementation(libs.kobweb.silk)
             implementation(libs.silk.icons.fa)
             implementation(libs.kobwebx.markdown)
-            
+        }
+
+        jsTest.dependencies {
+            implementation(kotlin("test"))
         }
     }
 }
