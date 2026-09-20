@@ -1,0 +1,14 @@
+site:
+  title: "2024 Game"
+
+server:
+  files:
+    dev:
+      contentRoot: "build/processedResources/js/main/public"
+      script: "build/kotlin-webpack/js/developmentExecutable/host2024game.js"
+      api: "build/libs/host2024game.jar"
+    prod:
+      script: "build/kotlin-webpack/js/productionExecutable/host2024game.js"
+      siteRoot: ".kobweb/site"
+
+  port: 8080
