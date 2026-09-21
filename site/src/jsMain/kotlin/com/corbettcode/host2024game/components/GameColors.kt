@@ -8,7 +8,7 @@ import com.varabyte.kobweb.silk.theme.colors.ColorMode
  * winning tile breaking out as a bright emerald.
  */
 object GameColors {
-    val Board = Color.rgb(0x9bb293)
+    val Board = Color.rgb(0xADC3A5)
     val EmptyCell = Color.rgba(238, 245, 232, 0.35f)
     val DarkText = Color.rgb(0x46543f)
     val LightText = Color.rgb(0xf4f9f0)
