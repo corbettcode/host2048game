@@ -50,8 +50,13 @@ class BoardMetrics(val boardSize: Double) {
     val gap = boardSize * 0.025
     val cellSize = (boardSize - gap * (BOARD_SIZE + 1)) / BOARD_SIZE
 
-    /** Distance from the first cell to the cell at [index]. */
-    fun offsetOf(index: Int) = index * (cellSize + gap)
+    /**
+     * Distance from the first cell to the cell at [index], as a percentage of a tile's own width.
+     *
+     * Percentages keep these offsets independent of the board's pixel size, so resizing the window moves tiles and
+     * empty cells together instead of leaving the tiles to slide after the grid.
+     */
+    fun offsetOf(index: Int) = index * (cellSize + gap) / cellSize * 100
 }
 
 val TileAppearKeyframes = Keyframes {
@@ -109,7 +114,11 @@ fun GameBoard(
 private fun TileView(tile: Tile, metrics: BoardMetrics) {
     Box(
         cellModifier(metrics, tile.row, tile.col)
-            .transition(Transition.of("transform", SLIDE_DURATION, AnimationTimingFunction.EaseInOut))
+            // A tile that was just spawned belongs to a brand new element, and the browser would otherwise
+            // transition it in from the board's top left corner instead of letting it appear where it landed.
+            .thenIf(!tile.isNew) {
+                Modifier.transition(Transition.of("transform", SLIDE_DURATION, AnimationTimingFunction.EaseInOut))
+            }
             .zIndex(if (tile.justMerged) 2 else 1)
     ) {
         Box(
@@ -194,7 +203,7 @@ private fun cellModifier(metrics: BoardMetrics, row: Int, col: Int) = Modifier
     .size(metrics.cellSize.px)
     .borderRadius((metrics.gap * 0.5).px)
     .styleModifier {
-        property("transform", "translate(${metrics.offsetOf(col)}px, ${metrics.offsetOf(row)}px)")
+        property("transform", "translate(${metrics.offsetOf(col)}%, ${metrics.offsetOf(row)}%)")
     }
 
 /** Longer numbers have to shrink to keep fitting on a tile. */

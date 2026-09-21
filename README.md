@@ -4,6 +4,8 @@ A [Kobweb](https://github.com/varabyte/kobweb) implementation of
 [2048](https://en.wikipedia.org/wiki/2048_(video_game)): slide the tiles with the arrow keys (or WASD, or a swipe),
 merge matching numbers, and try to build a 2048 tile.
 
+<img src="docs/game-at-start.png" alt="A new game of 2048: an empty green board with two starting tiles" width="420">
+
 The rules follow the ones described on Wikipedia:
 
 * A 4x4 grid that starts with two tiles.
@@ -23,9 +25,21 @@ The rules follow the ones described on Wikipedia:
 | `site/src/jsMain/.../pages/Index.kt` | Page layout, keyboard and swipe input, responsive board sizing. |
 | `site/src/jsTest/.../game/Game2048Test.kt` | Rule tests, run with `./gradlew :site:jsTest`. |
 
+## Look and feel
+
+The palette is a green take on the original: tiles start as pale mint and deepen through leaf and forest greens as
+their numbers climb, with the 2048 tile breaking out as a bright emerald. Every colour lives in
+`components/GameColors.kt`, so re-theming the game means editing that one file. The `Dark` button switches the page
+between light and dark, and the choice sticks between visits, as does your best score.
+
+The board scales to the viewport, and tile offsets are expressed as percentages of a tile's own size, so resizing the
+window moves tiles and grid together.
+
+## Animation
+
 Tiles keep a stable id as they move, so the UI can animate them sliding between cells. When two tiles merge, the
 merged tile inherits the id of the tile that slid into place, which is what makes a merge look like a single
-uninterrupted slide.
+uninterrupted slide. Freshly spawned tiles skip the slide transition entirely and pop into place where they landed.
 
 ## Getting Started
 
