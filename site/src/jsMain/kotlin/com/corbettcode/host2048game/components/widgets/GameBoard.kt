@@ -1,12 +1,12 @@
-package com.corbettcode.host2024game.components.widgets
+package com.corbettcode.host2048game.components.widgets
 
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.key
-import com.corbettcode.host2024game.components.GameColors
-import com.corbettcode.host2024game.game.BOARD_SIZE
-import com.corbettcode.host2024game.game.GameState
-import com.corbettcode.host2024game.game.GameStatus
-import com.corbettcode.host2024game.game.Tile
+import com.corbettcode.host2048game.components.GameColors
+import com.corbettcode.host2048game.game.BOARD_SIZE
+import com.corbettcode.host2048game.game.GameState
+import com.corbettcode.host2048game.game.GameStatus
+import com.corbettcode.host2048game.game.Tile
 import com.varabyte.kobweb.compose.css.FontWeight
 import com.varabyte.kobweb.compose.css.Transition
 import com.varabyte.kobweb.compose.css.UserSelect

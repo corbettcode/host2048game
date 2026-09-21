@@ -1,11 +1,11 @@
-package com.corbettcode.host2024game.game
+package com.corbettcode.host2048game.game
 
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.setValue
 import kotlinx.browser.localStorage
 
-private const val BEST_SCORE_KEY = "host2024game.bestScore"
+private const val BEST_SCORE_KEY = "host2048game.bestScore"
 
 /** Holds the live game and the best score, which survives reloads via local storage. */
 class GameController {

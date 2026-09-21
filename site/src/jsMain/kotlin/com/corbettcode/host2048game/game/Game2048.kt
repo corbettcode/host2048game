@@ -1,4 +1,4 @@
-package com.corbettcode.host2024game.game
+package com.corbettcode.host2048game.game
 
 import kotlin.random.Random
 

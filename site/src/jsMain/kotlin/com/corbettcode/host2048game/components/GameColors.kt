@@ -1,4 +1,4 @@
-package com.corbettcode.host2024game.components
+package com.corbettcode.host2048game.components
 
 import com.varabyte.kobweb.compose.ui.graphics.Color
 import com.varabyte.kobweb.silk.theme.colors.ColorMode

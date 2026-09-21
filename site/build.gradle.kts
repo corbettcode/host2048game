@@ -7,7 +7,7 @@ plugins {
     alias(libs.plugins.kobwebx.markdown)
 }
 
-group = "com.corbettcode.host2024game"
+group = "com.corbettcode.host2048game"
 version = "1.0-SNAPSHOT"
 
 kobweb {
@@ -19,7 +19,7 @@ kobweb {
 }
 
 kotlin {
-    configAsKobwebApplication("host2024game")
+    configAsKobwebApplication("host2048game")
 
     sourceSets {
         jsMain.dependencies {

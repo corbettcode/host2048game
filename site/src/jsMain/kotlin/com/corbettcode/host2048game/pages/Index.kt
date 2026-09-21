@@ -1,4 +1,4 @@
-package com.corbettcode.host2024game.pages
+package com.corbettcode.host2048game.pages
 
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.DisposableEffect
@@ -6,11 +6,11 @@ import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
-import com.corbettcode.host2024game.components.widgets.BoardMetrics
-import com.corbettcode.host2024game.components.widgets.GameBoard
-import com.corbettcode.host2024game.components.widgets.GameHeader
-import com.corbettcode.host2024game.game.Direction
-import com.corbettcode.host2024game.game.GameController
+import com.corbettcode.host2048game.components.widgets.BoardMetrics
+import com.corbettcode.host2048game.components.widgets.GameBoard
+import com.corbettcode.host2048game.components.widgets.GameHeader
+import com.corbettcode.host2048game.game.Direction
+import com.corbettcode.host2048game.game.GameController
 import com.varabyte.kobweb.compose.css.FontWeight
 import com.varabyte.kobweb.compose.foundation.layout.Box
 import com.varabyte.kobweb.compose.foundation.layout.Column

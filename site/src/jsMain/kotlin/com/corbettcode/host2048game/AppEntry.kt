@@ -1,7 +1,7 @@
-package com.corbettcode.host2024game
+package com.corbettcode.host2048game
 
 import androidx.compose.runtime.Composable
-import com.corbettcode.host2024game.components.GameColors
+import com.corbettcode.host2048game.components.GameColors
 import com.varabyte.kobweb.compose.ui.Modifier
 import com.varabyte.kobweb.compose.ui.modifiers.fillMaxHeight
 import com.varabyte.kobweb.compose.ui.modifiers.fontFamily

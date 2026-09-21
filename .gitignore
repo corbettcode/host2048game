@@ -25,5 +25,3 @@ kotlin-js-store
 # Gradle ignores
 .gradle
 
-# Kotlin ignores
-.kotlin

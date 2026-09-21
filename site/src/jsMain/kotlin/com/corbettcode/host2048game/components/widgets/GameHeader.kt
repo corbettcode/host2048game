@@ -1,10 +1,10 @@
-package com.corbettcode.host2024game.components.widgets
+package com.corbettcode.host2048game.components.widgets
 
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.key
 import androidx.compose.runtime.setValue
-import com.corbettcode.host2024game.components.GameColors
+import com.corbettcode.host2048game.components.GameColors
 import com.varabyte.kobweb.compose.css.FontWeight
 import com.varabyte.kobweb.compose.css.TextAlign
 import com.varabyte.kobweb.compose.css.WhiteSpace

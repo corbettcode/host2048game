@@ -1,7 +1,7 @@
-package com.corbettcode.host2024game.components.widgets
+package com.corbettcode.host2048game.components.widgets
 
 import androidx.compose.runtime.Composable
-import com.corbettcode.host2024game.components.GameColors
+import com.corbettcode.host2048game.components.GameColors
 import com.varabyte.kobweb.compose.css.Cursor
 import com.varabyte.kobweb.compose.css.FontWeight
 import com.varabyte.kobweb.compose.css.Transition
