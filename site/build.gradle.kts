@@ -1,4 +1,5 @@
 import com.varabyte.kobweb.gradle.application.util.configAsKobwebApplication
+import kotlinx.html.script
 
 plugins {
     alias(libs.plugins.kotlin.multiplatform)
@@ -14,6 +15,13 @@ kobweb {
     app {
         index {
             description.set("2048, the sliding tile puzzle, built with Kobweb")
+            head.add {
+                script {
+                    async = true
+                    src = "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9887769187597821"
+                    attributes["crossorigin"] = "anonymous"
+                }
+            }
         }
     }
 }
